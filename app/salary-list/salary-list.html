@@ -1,0 +1,23 @@
+<div ng-hide="error" class="container">
+	<h3>Monthly wages 03/14</h3>
+	<p>The total monthly wage includes overtime and evening work compensations.</p>
+	<table class="table">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Total monthly wage</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="employee in employeesData">
+			<td>{{employee.id}}</td>
+			<td>{{employee.name}}</td>
+			<td>{{employee.salary}}$</td>
+			<td><a ng-href="#!/employee/{{employee.id}}">Details</a></td>
+		</tr>
+	</table>
+</div>
+
+<div ng-show="error" class="container">
+	<h3>Monthly wages 03/14</h3>
+	<p>An error has occured when reading the data...</p>
+</div>

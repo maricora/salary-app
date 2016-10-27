@@ -1,0 +1,17 @@
+{
+  "name": "salary-app",
+  "description": "Calculates salaries from CSV file using AngularJS",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "bootstrap": "^3.3.6",
+    "html5-boilerplate": "^5.3.0",
+    "papaparse": "^4.1.2"
+  }
+}

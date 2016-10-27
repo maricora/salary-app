@@ -1,0 +1,40 @@
+<div ng-hide="error" class="container">
+	<div ng-show="employeeFound" class="container">
+		<a ng-href="#!/salary-list" class="btn btn-default">Back to salary list</a>
+		<h3>Employee details - March 2014</h3>
+
+		<div class="employee-card">
+			<p><strong>{{employee.name}} (ID: {{employee.id}})</strong></p>
+			<p>Total salary: <strong>{{employee.salary}}$</strong> (all compensations included)
+			<p>Evening work compensations: <strong>{{employee.evening}}$</strong></p>
+			<p>Overtime compensations: <strong>{{employee.overtime}}$</strong></p>
+		</div>
+
+		<h4>Shifts for the month of March 2014</h4>
+		<table class="table table-striped">
+			<tr>
+				<th>Working day</th>
+				<th>Shift time</th>
+			</tr>
+			<tr ng-repeat="day in employee.days">
+				<td>{{day.date}}</td>
+				<td><p ng-repeat='shift in day.shifts'>{{shift.start}} - {{shift.end}}</p></td>
+			</tr>
+		</table>
+
+		<a ng-href="#!/salary-list" class="btn btn-default">Back to salary list</a>
+	</div>
+
+	<div ng-hide="employeeFound" class="container">
+		<h3>Something went wrong...</h3>
+		<div class="employee-card">
+			<p>Employee not found! Please go back to salary list and proceed by choosing an employee from the list.</p>
+		</div>
+		<a ng-href="#!/salary-list" class="btn btn-default">Back to salary list</a>
+	</div>
+</div>
+
+<div ng-show="error" class="container">
+	<h3>Employee details - March 2014</h3>
+	<p>An error has occured when reading the data...</p>
+</div>
